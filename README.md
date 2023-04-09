@@ -20,4 +20,6 @@ I come from an accounting background and have worked in e-commerce retail corpor
 - Oracle ATP Database
 - SQLite
 
+[For more Info of Difference between databases](https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems)
+
 Finally, I hope we enjoy our SQL learning journey together. Check out my study notes for more information.
