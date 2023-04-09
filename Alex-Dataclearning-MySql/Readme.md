@@ -8,4 +8,4 @@ In this project, I am learning SQL using MySQL instead of MS SQL, which was used
 - Deploying a local database server is helpful when working with SQL
 - Important to be aware of differences in syntax when learning from different SQL servers
 
-## 
+I would strongly encourage you to learn from the original course by Alex. However, if you prefer to learn from my method, feel free to follow along.
