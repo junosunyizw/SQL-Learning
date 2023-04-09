@@ -20,4 +20,4 @@ I come from an accounting background and have worked in retail corporations for 
 - Oracle ATP Database
 - SQLite
 
-Finally, I hope you enjoy your SQL learning journey. Check out my study notes for more information.
+Finally, I hope we all enjoy our SQL learning journey together. Check out my study notes for more information.
