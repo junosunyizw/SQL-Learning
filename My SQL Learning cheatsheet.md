@@ -2,7 +2,7 @@
 ## [Updating]
 
 
-### Tpyes of Data
+## Tpyes of Data
 
 - integer(INT) - whole numbers
 - numeric - number with decimal
@@ -14,6 +14,7 @@
 - time - datetime
 - timestamps - timezone
 
+### CAST Statement
 The `CAST()` function in Postgres is used to convert a value of one data type to another data type. The syntax for the `CAST()` function is as follows:
 
 ```
