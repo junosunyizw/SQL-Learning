@@ -2,3 +2,5 @@ Course Sources: Original course from [Alex The Analyst](https://www.youtube.com/
 
 ## Introduction:
 My Solutions - MySql ([Reasons](https://github.com/junosunyizw/SQL-Learning/blob/main/Alex-Dataclearning-MySql/Readme.md#introduction))
+
+I would strongly encourage you to learn from the original course by Alex. However, if you prefer to learn from my method, feel free to follow along.
