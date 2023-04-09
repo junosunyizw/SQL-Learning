@@ -4,7 +4,7 @@
 
 ## Tpyes of Data
 
-- integer(INT) - whole numbers
+- integer or INT - whole numbers
 - numeric - number with decimal
 - varchar(x) - 'x' maxmium of character,normal is 50 or 200
 - char(x) - 'x' fix length of character strings
