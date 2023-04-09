@@ -2,7 +2,7 @@
 ## [Updating]
 
 
-## Tpyes of Data
+## Types of Data
 
 - integer or INT - whole numbers
 - numeric - number with decimal
