@@ -32,3 +32,9 @@ SELECT CAST(age AS integer) FROM employees;
 ```
 
 This would return the values in the `age` column as integers.
+
+### CONVERT Statement
+
+
+
+### FORMAT Statement
