@@ -3,7 +3,6 @@
 
 
 ### Data Types
-
 --text - character strings of any length
 --varchar(x) - a maximum of 'x' characters
 --char(x) - a fixed-length string of 'x' characters
