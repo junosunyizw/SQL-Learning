@@ -4,7 +4,7 @@ Hello, and welcome to my SQL learning repository.
 
 **Background:**
 
-I come from an accounting background and have worked in retail corporations for 8 years. As e-commerce has grown, so has the amount of data that I have to work with. This data is often stored in multiple sources, making it difficult to access and provide comprehensive reporting and analysis to management. I found it time-consuming to retrieve useful data from different sources using old methods. As a result, I realized that I needed to upgrade my knowledge to be more effective and efficient in fetching data from sources. SQL is the primary language to help me achieve my goal, and I believe that nobody needs an explanation of its importance.
+I come from an accounting background and have worked in e-commerce retail corporations for 8 years. As e-commerce has grown, so has the amount of data that I have to work with. This data is often stored in multiple sources, making it difficult to access and provide comprehensive reporting and analysis to management. I found it time-consuming to retrieve useful data from different sources using old methods. As a result, I realized that I needed to upgrade my knowledge to be more effective and efficient in fetching data from sources. SQL is the primary language to help me achieve my goal, and I believe that nobody needs an explanation of its importance.
 
 **Reasons for Creating this Repo:**
 
