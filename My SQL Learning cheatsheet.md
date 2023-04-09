@@ -2,11 +2,16 @@
 ## [Updating]
 
 
-### Data Types
-- text - character strings of any length
-- varchar(x) - a maximum of 'x' characters
-- char(x) - a fixed-length string of 'x' characters
-- boolean - True(1) , False(0) or NULL
-- date, time, timestamps - date, datetime, timezone
-- numeric - float, decimal
-- integer - whole numbers
+### Tpyes of Data
+
+- integer(INT) - whole numbers
+- numeric - number with decimal
+- varchar(x) - 'x' maxmium of character,normal is 50 or 200
+- char(x) - 'x' fix length of character strings
+- text - any length of character strings
+- boolean - True = 1, False = 0 or NULL
+- date - date
+- time - datetime
+- timestamps - timezone
+
+
