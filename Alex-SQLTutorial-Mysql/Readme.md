@@ -1,4 +1,4 @@
-Course Sources: Original course from [Alex The Analyst](https://www.youtube.com/@AlexTheAnalyst)([Intermediate SQL Tutorial])
+Course Sources: Original course from [Alex The Analyst](https://www.youtube.com/@AlexTheAnalyst)([Intermediate SQL Tutorial](https://www.youtube.com/watch?v=9URM1_2S0ho&list=PLUaB-1hjhk8HTgPnBukmMq7QTe83ANirL&index=1)))
 
 
 My Solutions - MySql
