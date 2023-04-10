@@ -26,17 +26,17 @@ CAST(expression AS data_type);
 ### FORMAT Statement
 
 
-## TIPS
+## 💡TIPS
 
-### OR & AND Operators
+### **OR & AND Operators**
 
 When there are multiple conditions related to OR and AND Operators, Must use **()** for OR operator for serparating the conditions. Otherwise, Results may be different.
 
 
 
-## ERROR IN SQL & HOW TO FIX THEM
+## ❌ERRORS IN SQL & HOW TO FIX THEM
 
-### Division by Zero Error
+### **Division by Zero Error**
 Method 1: Use the NULLIF Function
 ```
 SELECT numerator / NULLIF(denominator, 0)
