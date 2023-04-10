@@ -38,3 +38,8 @@ This would return the values in the `age` column as integers.
 
 
 ### FORMAT Statement
+
+
+## OR & AND Operators
+
+When there are multiple conditions related to OR and AND Operators, Must use **()** for OR operator for serparating the conditions. Otherwise, Results may be different.
