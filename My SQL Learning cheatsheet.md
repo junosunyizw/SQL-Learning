@@ -28,7 +28,7 @@ CAST(expression AS data_type);
 
 ## 💡TIPS
 
-### **OR & AND Operators**
+### *OR & AND Operators*
 
 When there are multiple conditions related to OR and AND Operators, Must use **()** for OR operator for serparating the conditions. Otherwise, Results may be different.
 
@@ -36,13 +36,13 @@ When there are multiple conditions related to OR and AND Operators, Must use **(
 
 ## ❌ERRORS IN SQL & HOW TO FIX THEM
 
-### **Division by Zero Error**
-Method 1: Use the NULLIF Function
+### *Division by Zero Error*
+- Method 1: Use the NULLIF Function
 ```
 SELECT numerator / NULLIF(denominator, 0)
 FROM my_table;
 ```
-Method 2: Use a CASE Statement
+- Method 2: Use a CASE Statement
 ```
 SELECT
   CASE
@@ -51,7 +51,7 @@ SELECT
   END
 FROM my_table;
 ```
-Method 3: Use a TRY/CATCH Block (using PostgreSQL 10 or later)
+- Method 3: Use a TRY/CATCH Block (using PostgreSQL 10 or later)
 ```
 BEGIN
   SELECT numerator / denominator
