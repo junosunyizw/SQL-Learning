@@ -15,15 +15,15 @@
 - timestamps - timezone
 
 ### CAST Statement
+
 ```
-CAST(expression AS data_type)
+CAST(expression AS data_type);
 
-
+```
 ### CONVERT Statement
 
 
 ### FORMAT Statement
-
 
 
 ## TIPS
@@ -34,7 +34,6 @@ When there are multiple conditions related to OR and AND Operators, Must use **(
 
 
 
-
 ## ERROR IN SQL & HOW TO FIX THEM
 
 ### Division by Zero Error
@@ -42,7 +41,7 @@ Method 1: Use the NULLIF Function
 ```
 SELECT numerator / NULLIF(denominator, 0)
 FROM my_table;
-
+```
 Method 2: Use a CASE Statement
 ```
 SELECT
@@ -51,7 +50,7 @@ SELECT
     ELSE numerator / denominator
   END
 FROM my_table;
-
+```
 Method 3: Use a TRY/CATCH Block (using PostgreSQL 10 or later)
 ```
 BEGIN
@@ -61,4 +60,4 @@ EXCEPTION
   WHEN division_by_zero THEN
     -- Handle the error here
 END;
-
+```
