@@ -35,8 +35,7 @@ When there are multiple conditions related to OR and AND Operators, Must use **(
 
 ### CTE
 
-Comparing Subquery, Temp table and Views, CTE is more performace and efficiency to process query.
-However, when creating 2rd CTE in the same query, you cannot process query of 2rd CTE, which is related 1st CTE.
+Common Table Expressions (CTEs) are generally more efficient and performant than Subqueries, Temp tables, and Views. However, if you are creating multiple CTEs in the same query, you cannot partially process the query of the second CTE that is related to the first CTE.
 
 ```
 Example:
