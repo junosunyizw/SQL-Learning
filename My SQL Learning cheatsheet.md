@@ -59,7 +59,7 @@ t1
 t2 as
     (select reg_name, max(total_sales) total_sales
     from t1
-    GROUP BY 1) -- error to process the query in t2 only as t1 is not existed in t2 table
+    GROUP BY 1) -- error to partially process the query in t2 only as t1 is not existed in t2 table
 select t1.reps_name, t1.reg_name,t1.total_sales
 from t1
 JOIN t2
