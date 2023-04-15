@@ -36,7 +36,7 @@ UPDATE NashvilleHousingData SET SALEDATE = DATE_FORMAT(STR_TO_DATE(SALEDATE, '%M
 
 
 
-## Data Clearning
+## 🧹Data Clearning
 
 ### Substring & Locate
 
