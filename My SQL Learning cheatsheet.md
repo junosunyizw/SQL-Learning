@@ -25,6 +25,33 @@ CAST(expression AS data_type);
 
 ### FORMAT Statement
 
+Date Formatting
+
+```
+--Transform US date format to SQL date format
+
+UPDATE NashvilleHousingData SET SALEDATE = DATE_FORMAT(STR_TO_DATE(SALEDATE, '%M %e, %Y'), '%Y-%m-%d');
+
+```
+
+
+
+## Data Clearning
+
+### Substring & Locate
+
+```
+-- MYSQL
+
+SELECT OwnerAddress,
+      substring_index(substring_index(OwnerAddress,',',1),',',-1) AS Address,
+      substring_index(substring_index(OwnerAddress,',',2),',',-1) AS City,
+      substring_index(substring_index(OwnerAddress,',',3),',',-1) AS State
+FROM NashvilleHousingData;
+
+```
+
+
 
 ## 💡TIPS
 
