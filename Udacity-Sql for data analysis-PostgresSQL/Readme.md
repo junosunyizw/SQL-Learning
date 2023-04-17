@@ -207,62 +207,85 @@ FROM orders
 where standard_qty > 1000 AND poster_qty = 0 AND gloss_qty = 0;
 ```
 
---Using the accounts table, find all the companies whose names do not start with 'C' and end with 's'.
+*Q25:Using the accounts table, find all the companies whose names do not start with 'C' and end with 's'.*
+```
 SELECT *
 FROM accounts
 WHERE not name BETWEEN 'C%' AND '%s';
+```
 
---When you use the BETWEEN operator in SQL, do the results include the values of your endpoints, or not? Figure out the answer to this important question by writing a query that displays the order date 
---and gloss_qty data for all orders where gloss_qty is between 24 and 29. Then look at your output to see if the BETWEEN operator included the begin and end values or not.
+*Q26:When you use the BETWEEN operator in SQL, do the results include the values of your endpoints, or not? Figure out the answer to this important question by writing a query that displays the order date and gloss_qty data for all orders where gloss_qty is between 24 and 29. Then look at your output to see if the BETWEEN operator included the begin and end values or not.*
+```
 SELECT occurred_at,gloss_qty
 FROM orders
 WHERE gloss_qty BETWEEN '24' and '29';
+```
 
---Use the web_events table to find all information regarding individuals who were contacted via the organic or adwords channels, and started their account at any point in 2016, sorted from newest to oldest.
+*Q27:Use the web_events table to find all information regarding individuals who were contacted via the organic or adwords channels, and started their account at any point in 2016, sorted from newest to oldest.*
+```
 Select *
 from web_events
 where channel in ('organic','adwords') and date_part('year',cast(occurred_at as date))= '2016'--or using (WHERE channel IN ('organic', 'adwords') AND occurred_at BETWEEN '2016-01-01' AND '2017-01-01')
 ORDER BY occurred_at;
+```
 
 
---OR Operator --key: when using or & and operator on multiple conditions, rememeber to use () for spliting these conditions, otherwise results would be different
---Find list of orders ids where either gloss_qty or poster_qty is greater than 4000. Only include the id field in the resulting table.
+### OR Operator 
+*tips:(key: when using or & and operator on multiple conditions, rememeber to use () for spliting these conditions, otherwise results would be different)*
+
+*Q27:*Find list of orders ids where either gloss_qty or poster_qty is greater than 4000. Only include the id field in the resulting table.*
+```
 select id
 from orders
 where gloss_qty > 4000 OR poster_qty > 4000;
+```
 
---Write a query that returns a list of orders where the standard_qty is zero and either the gloss_qty or poster_qty is over 1000.
+*Q28:Write a query that returns a list of orders where the standard_qty is zero and either the gloss_qty or poster_qty is over 1000.*
+```
 select *
 from orders
 where standard_qty = 0 and (gloss_qty > 1000 or poster_qty>1000)
+```
 
---Find all the company names that start with a 'C' or 'W', and the primary contact contains 'ana' or 'Ana', but it doesn't contain 'eana'.
+*Q29:Find all the company names that start with a 'C' or 'W', and the primary contact contains 'ana' or 'Ana', but it doesn't contain 'eana'.*
+```
 select *
 FROM accounts
 where (name like 'C%' or name like 'W%') and ((primary_poc like '%ana%' or primary_poc like '%Ana%') and not primary_poc like '%eana%');
+```
 
+## SQL Joins
 
---JOIN Statement
---Try pulling all the data from the accounts table, and all the data from the orders table.
+### JOIN 
+
+*Q30:Try pulling all the data from the accounts table and all the data from the orders table.*
+
+```
 select *
 from accounts a
 JOIN orders o
 on  a.id=o.account_id;
+```
 
---Try pulling standard_qty, gloss_qty, and poster_qty from the orders table, and the website and the primary_poc from the accounts table.
+*Q31:Try pulling standard_qty, gloss_qty, and poster_qty from the orders table, and the website and the primary_poc from the accounts table.*
+```
 select standard_qty,gloss_qty,poster_qty,website,primary_poc
 from orders o
 JOIN accounts a
 on a.id=o.account_id;
+```
 
---Provide a table for all web_events associated with account name of Walmart. There should be three columns. Be sure to include the primary_poc, time of the event, and the channel for each event. Additionally, you might choose to add a fourth column to assure only Walmart events were chosen.
+*Q32:Provide a table for all web_events associated with account name of Walmart. There should be three columns. Be sure to include the primary_poc, time of the event, and the channel for each event. Additionally, you might choose to add a fourth column to assure only Walmart events were chosen.*
+```
 select w.occurred_at,a.primary_poc,w.channel,a.name
 from web_events w
 JOIN accounts a
 on w.account_id=a.id
 where a.name = 'Walmart';
+```
 
---Provide a table that provides the region for each sales_rep along with their associated accounts. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts alphabetically (A-Z) according to account name.
+*Q33:Provide a table that provides the region for each sales_rep along with their associated accounts. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts alphabetically (A-Z) according to account name.*
+```
 select a.name as account_name,s.name as reps_name,r.name as region_name
 from sales_reps s
 JOIN accounts a
@@ -270,8 +293,10 @@ on  a.sales_rep_id=s.id
 JOIN region r
 on  s.region_id=r.id
 ORDER BY 1;
+```
 
---Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. Your final table should have 3 columns: region name, account name, and unit price. A few accounts have 0 for total, so I divided by (total + 0.01) to assure not dividing by zero.
+*Q34:Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. Your final table should have 3 columns: region name, account name, and unit price. A few accounts have 0 for total, so I divided by (total + 0.01) to assure not dividing by zero.*
+```
 select r.name as region_name, a.name as account_name, ROUND(CAST(o.total_amt_usd/nullif(total,0) AS numeric),2) as unit_price --different solution from request of question.
 from orders o
 JOIN accounts a
@@ -280,8 +305,10 @@ JOIN sales_reps s
 on s.id=a.sales_rep_id
 JOIN region r
 on s.region_id=r.id;
+```
 
---Provide a table that provides the region for each sales_rep along with their associated accounts. This time only for the Midwest region. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts alphabetically (A-Z) according to account name.
+*Q35:Provide a table that provides the region for each sales_rep along with their associated accounts. This time only for the Midwest region. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts alphabetically (A-Z) according to account name.*
+```
 select r.name region_names,s.name sales_name,a.name account_name
 from sales_reps s
 JOIN accounts a
@@ -290,8 +317,10 @@ JOIN region r
 on r.id=s.region_id
 where r.name ='Midwest'
 ORDER BY 3;
+```
 
---Provide a table that provides the region for each sales_rep along with their associated accounts. This time only for accounts where the sales rep has a first name starting with S and in the Midwest region. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts alphabetically (A-Z) according to account name.
+*36:Provide a table that provides the region for each sales_rep along with their associated accounts. This time only for accounts where the sales rep has a first name starting with S and in the Midwest region. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts alphabetically (A-Z) according to account name.*
+```
 select r.name region_names,s.name sales_name,a.name account_name
 from sales_reps s
 JOIN accounts a
@@ -300,8 +329,10 @@ JOIN region r
 on r.id=s.region_id
 where s.name like 'S%' and r.name = 'Midwest'
 ORDER BY 3;
+```
 
---Provide a table that provides the region for each sales_rep along with their associated accounts. This time only for accounts where the sales rep has a last name starting with K and in the Midwest region. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts alphabetically (A-Z) according to account name.
+*Q37:Provide a table that provides the region for each sales_rep along with their associated accounts. This time only for accounts where the sales rep has a last name starting with K and in the Midwest region. Your final table should include three columns: the region name, the sales rep name, and the account name. Sort the accounts alphabetically (A-Z) according to account name.*
+```
 select r.name region_names,s.name sales_name,a.name account_name
 from sales_reps s
 JOIN accounts a
@@ -310,8 +341,10 @@ JOIN region r
 on r.id=s.region_id
 where s.name like 'K%' and r.name = 'Midwest'
 ORDER BY 3;
+```
 
---Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should only provide the results if the standard order quantity exceeds 100. Your final table should have 3 columns: region name, account name, and unit price. In order to avoid a division by zero error, adding .01 to the denominator here is helpful total_amt_usd/(total+0.01).
+*Q38:Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should only provide the results if the standard order quantity exceeds 100. Your final table should have 3 columns: region name, account name, and unit price. In order to avoid a division by zero error, adding .01 to the denominator here is helpful total_amt_usd/(total+0.01).*
+```
 select r.name region_names,a.name account_name,round(cast(total_amt_usd/nullif(total,0) as numeric),4)
 from sales_reps s
 JOIN accounts a
@@ -322,8 +355,10 @@ JOIN orders o
 on o.account_id=a.id
 where standard_qty >100
 ORDER BY 3;
+```
 
---Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should only provide the results if the standard order quantity exceeds 100 and the poster order quantity exceeds 50. Your final table should have 3 columns: region name, account name, and unit price. Sort for the smallest unit price first. In order to avoid a division by zero error, adding .01 to the denominator here is helpful (total_amt_usd/(total+0.01).
+*Q39:Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should only provide the results if the standard order quantity exceeds 100 and the poster order quantity exceeds 50. Your final table should have 3 columns: region name, account name, and unit price. Sort for the smallest unit price first. In order to avoid a division by zero error, adding .01 to the denominator here is helpful (total_amt_usd)/(total+0.01).*
+```
 select r.name region_names,a.name account_name,round(cast(total_amt_usd/nullif(total,0) as numeric),4)
 from sales_reps s
 JOIN accounts a
@@ -334,8 +369,10 @@ JOIN orders o
 on o.account_id=a.id
 where standard_qty>100 and poster_qty>50
 ORDER BY 3;
+```
 
---Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should only provide the results if the standard order quantity exceeds 100 and the poster order quantity exceeds 50. Your final table should have 3 columns: region name, account name, and unit price. Sort for the largest unit price first. In order to avoid a division by zero error, adding .01 to the denominator here is helpful (total_amt_usd/(total+0.01).
+*Q40:Provide the name for each region for every order, as well as the account name and the unit price they paid (total_amt_usd/total) for the order. However, you should only provide the results if the standard order quantity exceeds 100 and the poster order quantity exceeds 50. Your final table should have 3 columns: region name, account name, and unit price. Sort for the largest unit price first. In order to avoid a division by zero error, adding .01 to the denominator here is helpful (total_amt_usd)/(total+0.01).*
+```
 select r.name region_names,a.name account_name,round(cast(total_amt_usd/nullif(total,0) as numeric),4)
 from sales_reps s
 JOIN accounts a
@@ -346,24 +383,30 @@ JOIN orders o
 on o.account_id=a.id
 where standard_qty>100 and poster_qty>50
 ORDER BY 3 DESC;
+```
 
---What are the different channels used by account id 1001? Your final table should have only 2 columns: account name and the different channels. You can try SELECT DISTINCT to narrow down the results to only the unique values.
+*Q41:What are the different channels used by account id 1001? Your final table should have only 2 columns: account name and the different channels. You can try SELECT DISTINCT to narrow down the results to only the unique values.
+```
 select DISTINCT a.name account_name, w.channel channels
 from accounts a
 JOIN web_events w
 on a.id=w.account_id
 where a.id = 1001;
+```
 
---Find all the orders that occurred in 2015. Your final table should have 4 columns: occurred_at, account name, order total, and order total_amt_usd.
+*Q42:Find all the orders that occurred in 2015. Your final table should have 4 columns: occurred_at, account name, order total, and order total_amt_usd.*
+```
 select o.occurred_at, a.name,o.total,o.total_amt_usd
 from orders o
 JOIN accounts a
 on  o.account_id=a.id
 where date_part('year',cast(occurred_at as date)) = 2016
 ORDER BY 1;
+```
 
---SQL Aggregations
---SUM
+## SQL Aggregations
+
+### SUM
 
 --Find the total amount of poster_qty paper ordered in the orders table.
 select SUM(poster_qty)
