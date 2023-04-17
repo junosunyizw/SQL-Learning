@@ -10,19 +10,19 @@
 Click here to expand!
 </summary>
          
-1. ### Basic SQL
+### 1.[Basic SQL](https://github.com/junosunyizw/SQL-Learning/blob/main/Udacity-Sql%20for%20data%20analysis-PostgresSQL/Readme.md#basic-sql-1)
 
-2. ### SQL Joins
+### 2.SQL Joins
 
-3. ### SQL Aggregations
+### 3.SQL Aggregations
 
-4. ### SQL Subqueries & Temporary Tables
+### 4.SQL Subqueries & Temporary Tables
 
-4. ### SQL Data Cleaning
+### 5.SQL Data Cleaning
          
-5. ### [Advanced] SQL Window Functions
+### 6.[Advanced] SQL Window Functions
 
-6. ### [Advanced] SQL Advanced JOINs & Performance Tuning
+### 7.[Advanced] SQL Advanced JOINs & Performance Tuning
 
 </details>
 
