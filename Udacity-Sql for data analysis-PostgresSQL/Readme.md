@@ -1,5 +1,5 @@
-Course Sources: Original course from [SQL for Data Analysis](https://www.udacity.com/course/sql-for-data-analysis--ud198) -Postgres SQL
-
+Course Sources: Original course from [Udacity - SQL for Data Analysis](https://www.udacity.com/course/sql-for-data-analysis--ud198) -Postgres SQL
+*This is amazing free comprehesive SQL course with resources and practices to take you from basic to intermediate level.*
 
 ## Introduction
 
