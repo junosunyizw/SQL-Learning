@@ -1,10 +1,18 @@
 Course Sources: Original course from [Udacity - SQL for Data Analysis](https://www.udacity.com/course/sql-for-data-analysis--ud198) -Postgres SQL
 
-*This is amazing free comprehesive SQL course with resources and practices to take you from basic to intermediate level.*
+*This is an amazing free comprehesive SQL course with resources and practices to take you from basic to intermediate level.*
 
 ## Introduction
 
+In this SQL learning project, i went through whole course taking all practices step by step. 
 
+My following solutions for practices are based on my understandings and thoughs. I haven`t strictly followed the correct answers provided by the website. So, some of answers may not be same with original answers. Or even maybe incorrect and inefficient answers.
+
+From my understandings to learn SQL, I tried my best to solove the any questions in different ways in order to practice more functions in each queries.
+
+Don`t be afraid to make mistakes for answering. Try your best to solve those questions on your own way first and you will find out any mistakes you made speeds up your learning on SQL very much.
+
+Please feel free to let me know if any issues. That will be super appreciated!
 
 ***
 ## Table of Content
