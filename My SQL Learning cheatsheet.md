@@ -127,5 +127,7 @@ This is likely because there are some values in the column that are not in the c
 - Method 1: Update the existing data in the column to the correct date format before altering the data type. This can be done using the TO_DATE() function in PostgreSQL.
 - Method 2: Use the USING clause in your ALTER TABLE statement to specify a custom conversion function that will convert the existing data to the correct date format
 ```
-Use the USING clause in your ALTER TABLE statement to specify a custom conversion function that will convert the existing data to the correct date format
+ALTER TABLE my_table ALTER COLUMN occurred_at TYPE date 
+USING to_date(occurred_at, 'YYYY-MM-DD');
+
 ```
