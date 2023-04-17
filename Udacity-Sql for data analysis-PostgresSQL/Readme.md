@@ -1,6 +1,26 @@
 
+<details>
+<summary>
+Click here to expand!
+</summary>
+### Basic SQL
 
-#Introductions
+1.SQL Joins
+
+2.SQL Aggregations
+
+3.SQL Subqueries & Temporary Tables
+
+4.SQL Data Cleaning
+5.[Advanced] SQL Window Functions
+
+6.[Advanced] SQL Advanced JOINs & Performance Tuning
+
+</details>
+
+***
+
+
 
 ```
 --Update the data type for date column after import my data from cvs., which is easier for you to process query for next practicing.
