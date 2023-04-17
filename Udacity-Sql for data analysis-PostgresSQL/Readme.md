@@ -1,20 +1,28 @@
 
+## Introduction
+
+
+
+***
+## Table of Content
 <details>
 <summary>
 Click here to expand!
 </summary>
-### Basic SQL
+         
+1.### Basic SQL
 
-1.SQL Joins
+2.### SQL Joins
 
-2.SQL Aggregations
+3.### SQL Aggregations
 
-3.SQL Subqueries & Temporary Tables
+4.### SQL Subqueries & Temporary Tables
 
-4.SQL Data Cleaning
-5.[Advanced] SQL Window Functions
+4.### SQL Data Cleaning
+         
+5.### [Advanced] SQL Window Functions
 
-6.[Advanced] SQL Advanced JOINs & Performance Tuning
+6.### [Advanced] SQL Advanced JOINs & Performance Tuning
 
 </details>
 
