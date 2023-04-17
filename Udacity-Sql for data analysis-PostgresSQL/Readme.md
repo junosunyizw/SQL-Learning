@@ -2,6 +2,8 @@ Course Sources: Original course from [Udacity - SQL for Data Analysis](https://w
 
 *This is an amazing free comprehesive SQL course with resources and practices to take you from basic to intermediate level.*
 
+
+
 ## Introduction
 
 In this SQL learning project, i went through whole course taking all practices step by step. 
@@ -39,12 +41,11 @@ Click here to expand!
 
 ***
 
+### a Little suggestions
 
+1.If you use my table of dataset, please Update the data type for date column after import my data from cvs, which is easier for you to process query for next practicing.it saves much for you to CAST everytime for query with Date manipulation.
 
 ```
---Update the data type for date column after import my data from cvs., which is easier for you to process query for next practicing.
---it saves much for you to CAST everytime for query with Date manipulation.
-
 ALTER TABLE orders 
 ALTER COLUMN occurred_at TYPE date 
 USING to_date(occurred_at, 'YYYY-MM-DD');
