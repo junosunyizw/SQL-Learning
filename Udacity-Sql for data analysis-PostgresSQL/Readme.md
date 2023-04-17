@@ -10,7 +10,7 @@
 Click here to expand!
 </summary>
          
-### 1.[Basic SQL](https://github.com/junosunyizw/SQL-Learning/blob/main/Udacity-Sql%20for%20data%20analysis-PostgresSQL/Readme.md#basic-sql-1)
+### 1.Basic SQL
 
 ### 2.SQL Joins
 
