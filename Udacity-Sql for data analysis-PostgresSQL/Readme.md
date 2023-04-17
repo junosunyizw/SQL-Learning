@@ -1385,46 +1385,52 @@ SELECT id,
 from orders;
 ```
 
---Use the NTILE functionality to divide the orders for each account into 100 levels in terms of the amount of total_amt_usd for their orders. Your resulting table should have the account_id, the occurred_at time for each order, the total amount of total_amt_usd paper purchased, and one of 100 levels in a total_percentile column.
-
+*Q117:Use the NTILE functionality to divide the orders for each account into 100 levels in terms of the amount of total_amt_usd for their orders. Your resulting table should have the account_id, the occurred_at time for each order, the total amount of total_amt_usd paper purchased, and one of 100 levels in a total_percentile column.*
+```
 SELECT id,
        account_id,
        total_amt_usd,
        DATE_TRUNC('month', cast(occurred_at as date)) AS month,
        NTILE(100) OVER (PARTITION BY account_id ORDER BY total_amt_usd)
 from orders;
+```
 
+## [Advanced] SQL Advanced JOINs & Performance Tuning
 
---[Advanced] SQL Advanced JOINs & Performance Tuning
---FULL OUTER JOIN
---each account who has a sales rep and each sales rep that has an account (all of the columns in these returned rows will be full)
+### FULL OUTER JOIN
+
+*Q118:each account who has a sales rep and each sales rep that has an account (all of the columns in these returned rows will be full)*
+```
 select *
 from accounts a
 full outer join sales_reps s
 on a.sales_rep_id=s.id;
+```
 
---but also each account that does not have a sales rep and each sales rep that does not have an account (some of the columns in these returned rows will be empty)
-
+*Q119:but also each account that does not have a sales rep and each sales rep that does not have an account (some of the columns in these returned rows will be empty)*
+```
 select *
 FROM accounts a
 full outer join sales_reps s
 on  a.sales_rep_id=s.id
 Where a.sales_rep_id is null or s.id is null;
+```
 
+### JOINs with Comparison Operators--Inequality JOINs
 
---JOINs with Comparison Operators--Inequality JOINs
---In the following SQL Explorer, write a query that left joins the accounts table and the sales_reps tables on each sale rep's ID number and joins it using the < comparison operator on accounts.primary_poc and sales_reps.name, like so:
---(https://stackoverflow.com/questions/26080187/sql-string-comparison-greater-than-and-less-than-operators/26080240#26080240)
-
+*Q120In the following SQL Explorer, write a query that left joins the accounts table and the sales_reps tables on each sale rep's ID number and joins it using the < comparison operator on accounts.primary_poc and sales_reps.name, like so:(https://stackoverflow.com/questions/26080187/sql-string-comparison-greater-than-and-less-than-operators/26080240#26080240)*
+```
 select a.name,a.primary_poc,s.name
 from accounts a
 left join sales_reps s
 on a.sales_rep_id=s.id  and a.primary_poc < s.name
 where a.name = 'Walmart';
+```
 
---Self JOINs 
---change the interval to 1 day to find those web events that occurred after, but not more than 1 day after, another web event
---add a column for the channel variable in both instances of the table in your query
+### Self JOINs 
+
+*Q121:change the interval to 1 day to find those web events that occurred after, but not more than 1 day after, another web event add a column for the channel variable in both instances of the table in your query*
+```
 --too hard to understand
 
 SELECT we1.id AS we_id,
@@ -1441,18 +1447,20 @@ SELECT we1.id AS we_id,
   AND we1.occurred_at > we2.occurred_at
   AND we1.occurred_at <= we2.occurred_at + INTERVAL '1 day'
 ORDER BY we1.account_id, we2.occurred_at;
+```
 
+### UNION
 
---UNION
-
-
+```
 SELECT *
 FROM accounts
 UNION all
 select *
 from accounts;
+```
 
---Add a WHERE clause to each of the tables that you unioned in the query above, filtering the first table where name equals Walmart and filtering the second table where name equals Disney. Inspect the results then answer the subsequent quiz.
+*Q122:Add a WHERE clause to each of the tables that you unioned in the query above, filtering the first table where name equals Walmart and filtering the second table where name equals Disney. Inspect the results then answer the subsequent quiz.*
+```
 select *
 from accounts 
 where name = 'Walmart'
@@ -1460,11 +1468,10 @@ UNION all
 select *
 from accounts
 where name ='Disney';
+```
 
-
---Perform the union in your first query (under the Appending Data via UNION header) in a common table expression and name it double_accounts. Then do a COUNT the number of times a name appears in the double_accounts table. If you do this correctly, your query results should have a count of 2 for each name.
-
-
+*Q123:Perform the union in your first query (under the Appending Data via UNION header) in a common table expression and name it double_accounts. Then do a COUNT the number of times a name appears in the double_accounts table. If you do this correctly, your query results should have a count of 2 for each name.*
+```
 with 
 t1 as
 (
@@ -1478,9 +1485,10 @@ select name,count(*)
 FROM t1
 GROUP BY 1
 order by 2;
+```
 
--- Performance Tuning
-
+### Performance Tuning
+```
 --1.limit time can provide more performance in query
 --2.limit function in aggragation function query do not provide better proformance becasuse limit is the last fucntion to be processed.
 --using subquery to limit amount of data set to be aggragated will perform much better.
@@ -1512,7 +1520,7 @@ on  DATE_TRUNC('day',cast(o.occurred_at as date)) = DATE_TRUNC('day',cast(w.occu
 
 --better performance solution
 --joining the tables after aggragation.
-
+```
 
 
 
