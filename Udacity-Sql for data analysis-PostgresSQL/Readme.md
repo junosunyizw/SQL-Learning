@@ -41,9 +41,9 @@ Click here to expand!
 
 ***
 
-### a Little suggestions
+### A Little Suggestions Before Start
 
-1.If you use my table of dataset, please Update the data type for date column after import my data from cvs, which is easier for you to process query for next practicing.it saves much for you to CAST everytime for query with Date manipulation.
+- Please update the data type for the date column in my dataset table after importing the data from CSV. This will make it easier for you to process queries during your next practice. By doing this, you will save time on casting every time you manipulate the date for a query.
 
 ```
 ALTER TABLE orders 
