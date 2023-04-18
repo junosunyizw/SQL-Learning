@@ -6,21 +6,46 @@ Course Sources: Original course from [Udacity - SQL for Data Analysis](https://w
 
 ## Introduction
 
-In this SQL learning project, i went through whole course taking all practices step by step. 
+<details>
+<summary>
+Click here!
+</summary>
 
-My following solutions for practices are based on my understandings and thoughs. I haven`t strictly followed the correct answers provided by the website. So, some of answers may not be same with original answers. Or even maybe incorrect and inefficient answers.
+### Background
 
-From my understandings to learn SQL, I tried my best to solove the any questions in different ways in order to practice more functions in each queries.
+*The Parch & Posey is a not a real company. All fabricated data is for sake of this project.*
+*All questions of answers are meant to simulate real world problems.*
 
-Don`t be afraid to make mistakes for answering. Try your best to solve those questions on your own way first and you will find out any mistakes you made speeds up your learning on SQL very much.
+The Parch & Posey
+- The Parch & Posey is a company that sells paper.
+- They have 50 sales reps spread across the US in 4 regions.
+- They sell three types of paper: Regular, Poster and Glossy.
+- Their clients are primarily large fortune 100 companies whom they attract by Traffice Source from Google, Facebook and Twitter.
 
-Please feel free to let me know if any issues. That will be super appreciated!
+### The Objective
+
+In this Project
+- Access The Parch & Posey Database.
+- Think like an data expert for the company to use SQL to solve tricky questions for business.
+- Getting very familiar with the "big 6" statements including select,from,where,group by,having and order by.
+- To know how to use arithmetic with aggregate functions including count,count(distinct),min,max,avg and sum.
+- To know how to query multiple tables with inner join,left join,full outer join and union.
+- To know how to use Subquery and CTE.
+- To Know how to use powerful window functions to solve difficult tasks for like running total,comparing previous or next row of data etc.
+- To understand performance tunning for giant data sets
+
+
+</details>
+
+***
+
+
 
 ***
 ## Table of Content
 <details>
 <summary>
-Click here to expand!
+Click here!
 </summary>
          
 ### 1.Basic SQL
