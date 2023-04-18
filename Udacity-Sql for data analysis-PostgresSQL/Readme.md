@@ -38,10 +38,6 @@ In this Project
 </details>
 
 ***
-
-
-
-***
 ## Table of Content
 <details>
 <summary>
