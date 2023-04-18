@@ -62,6 +62,18 @@ Click here!
 
 ***
 
+## EDR
+<details>
+<summary>
+Click here!
+</summary>
+
+
+         
+
+</details>
+
+
 ### A Little Suggestions Before Start
 
 - Please update the data type for the date column in my dataset table after importing the data from CSV. This will make it easier for you to process queries during your next practice. By doing this, you will save time on casting every time you manipulate the date for a query.
