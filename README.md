@@ -10,7 +10,6 @@ I come from an accounting background and have worked in e-commerce retail corpor
 
 1. During my SQL learning journey, I have joined multiple free and paid classes on different websites with many resources. I want to outline what I have learned from these websites and also allow users of this repository to compare which class is most suitable for them to learn at their own pace.
 2. I will track the courses and solutions that I come across which will be useful for my study and job.
-3. I want to motivate people who have a similar or different background like me to not think twice and just do it.
 
 **Related Databases being Hosted in Different Servers on Learning:**
 
