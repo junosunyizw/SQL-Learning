@@ -44,19 +44,19 @@ In this Project
 Click here!
 </summary>
          
-### 1.Basic SQL
+### [Basic SQL](#basic-sql-1)
 
-### 2.SQL Joins
+### [SQL Joins](#sql-joins-1)
 
-### 3.SQL Aggregations
+### [SQL Aggregations](#sql-aggregations-1)
 
-### 4.SQL Subqueries & Temporary Tables
+### [SQL Subqueries & Temporary Tables](#sql-subqueries--temporary-tables-1)
 
-### 5.SQL Data Cleaning
+### [SQL Data Cleaning](#sql-data-cleaning-1)
          
-### 6.[Advanced] SQL Window Functions
+### [Advanced SQL Window Functions](#advanced-sql-window-functions-1)
 
-### 7.[Advanced] SQL Advanced JOINs & Performance Tuning
+### [Advanced SQL Advanced JOINs & Performance Tuning](#advanced-sql-advanced-joins--performance-tuning-1)
 
 </details>
 
