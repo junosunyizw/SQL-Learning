@@ -27,7 +27,7 @@ The Parch & Posey
 In this Project
 - Access The Parch & Posey Database.
 - Think like an data expert for the company to use SQL to solve tricky questions for business.
-- Getting very familiar with the "big 6" statements including select,from,where,group by,having and order by.
+- Getting familiar with the "big 6" statements including select,from,where,group by,having and order by.
 - To know how to use arithmetic with aggregate functions including count,count(distinct),min,max,avg and sum.
 - To know how to query multiple tables with inner join,left join,full outer join and union.
 - To know how to use Subquery and CTE.
