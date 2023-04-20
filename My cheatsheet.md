@@ -93,6 +93,17 @@ on t1.reg_name=t2.reg_name AND t1.total_sales=t2.total_sales
 
 ```
 
+### `Pivoting` data with count & case
+
+```SQL
+SELECT primary_product_id,
+        count(DISTINCT CASE WHEN items_purchased = 1 THEN order_id ELSE NULL END) count_one_itemorders,
+        count(DISTINCT CASE WHEN items_purchased = 2 then order_id ELSE NULL END) count_two_itemorders
+FROM orders
+WHERE order_id BETWEEN 31000 and 32000 -- arbitary
+GROUP BY 1;
+```
+
 
 ## ❌ERRORS IN SQL & HOW TO FIX THEM
 
