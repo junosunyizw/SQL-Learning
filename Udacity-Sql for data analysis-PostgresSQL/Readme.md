@@ -62,7 +62,7 @@ Click here!
 
 ***
 
-## EDR
+## ERD
 <details>
 <summary>
 Click here!
